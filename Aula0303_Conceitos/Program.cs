@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Aula0303_Conceitos.Util;
+
 
 namespace Aula0303_Conceitos
 {
@@ -12,7 +12,7 @@ namespace Aula0303_Conceitos
         static void Main(string[] args)
         {
 
-            TipoMeioTransporte tipo = (TipoMeioTransporte)Menu();
+            Aula0303_Conceitos.Util.TipoMeioTransporte tipo = (Aula0303_Conceitos.Util.TipoMeioTransporte) Aula0303_Conceitos.Util.Menu();
 
             switch (tipo)
             {
