@@ -52,6 +52,18 @@
     <Compile Include="frmCadastroCliente.Designer.cs">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDetalhesCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalhesCliente.Designer.cs">
+      <DependentUpon>frmDetalhesCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListagemClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListagemClientes.Designer.cs">
+      <DependentUpon>frmListagemClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +80,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadastroCliente.resx">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalhesCliente.resx">
+      <DependentUpon>frmDetalhesCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListagemClientes.resx">
+      <DependentUpon>frmListagemClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,6 +116,10 @@
     <ProjectReference Include="..\Controllers\Controllers.csproj">
       <Project>{1c964244-5716-4944-9619-f0d5df9dc956}</Project>
       <Name>Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{ab81133a-e699-4f1e-a2e3-912883d91a88}</Project>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

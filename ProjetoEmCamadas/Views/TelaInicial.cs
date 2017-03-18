@@ -24,5 +24,12 @@ namespace Views
             cadCliente.MdiParent = this;
             cadCliente.Show();
         }
+
+        private void listagemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListagemClientes listagem = new frmListagemClientes();
+            listagem.MdiParent = this;
+            listagem.Show();
+        }
     }
 }
