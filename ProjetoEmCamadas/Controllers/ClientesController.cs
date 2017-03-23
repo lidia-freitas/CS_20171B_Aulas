@@ -17,19 +17,7 @@ namespace Controllers
             listaClientes.Add(cli);
         }
 
-        public Cliente Detalhes(int id)
-        {
-            foreach (Cliente cli in listaClientes)
-            {
-                if(cli.ClienteID == id)
-                {
-                    return cli;
-                }
-            }
-            return null;
-        }
-
-        public Cliente Editar(int id)
+        private Cliente BuscarPorID(int id)
         {
             foreach (Cliente cli in listaClientes)
             {
@@ -39,6 +27,22 @@ namespace Controllers
                 }
             }
             return null;
+        }
+
+        public Cliente Detalhes(int id)
+        {
+            return BuscarPorID(id);
+        }
+
+        public void Editar(int id, string novoNome, string novoCpf)
+        {
+            Cliente c = BuscarPorID(id);
+
+            if(c != null)
+            {
+                c.Nome = novoNome;
+                c.Cpf = novoCpf;
+            }
         }
 
         public void Excluir(int id)

@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Controllers;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,26 @@ namespace Views
 {
     public partial class frmDetalhesCliente : Form
     {
-        public frmDetalhesCliente(Cliente cliente)
+        public frmDetalhesCliente(int clienteID)
         {
             InitializeComponent();
-            lblId.Text = cliente.ClienteID.ToString();
-            lblNome.Text = cliente.Nome;
-            lblCpf.Text = cliente.Cpf;
+
+            ClientesController cliController = new ClientesController();
+            Cliente cliente = cliController.Detalhes(clienteID);
+
+            if (cliente != null)
+            {
+                // Preenchendo a tela com os dados do cliente encontrado
+                lblId.Text = cliente.ClienteID.ToString();
+                lblNome.Text = cliente.Nome;
+                lblCpf.Text = cliente.Cpf;
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Cliente não encontrado","Erro");
+                this.Close();
+            }
         }
     }
 }

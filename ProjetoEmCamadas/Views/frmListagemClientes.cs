@@ -26,8 +26,15 @@ namespace Views
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idSelecionado = Convert.ToInt32(((DataGridView)sender).Rows[e.RowIndex].Cells[1].Value);
+            int idSelecionado = Convert.ToInt32(((DataGridView)sender).Rows[e.RowIndex].Cells[3].Value);
+            frmDetalhesCliente telaDetalhes = new frmDetalhesCliente(idSelecionado);
+        }
+
+        private void dgvClientes_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
 
         }
+
+        
     }
 }
