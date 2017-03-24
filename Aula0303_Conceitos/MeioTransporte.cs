@@ -8,10 +8,10 @@ namespace Aula0303_Conceitos
         public int Ano { get; set; }
         public int Capacidade { get; set; }
 
-
-        public virtual void Parar()
+        public virtual int Parar()
         {
             Console.WriteLine("MeioTransporte: Parando...");
+            return 1;
         }
 
     }

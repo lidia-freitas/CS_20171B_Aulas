@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using static Aula0303_Conceitos.Util;
 
 namespace Aula0303_Conceitos
 {
@@ -11,12 +7,16 @@ namespace Aula0303_Conceitos
     {
         static void Main(string[] args)
         {
+            //Console.WriteLine("Hello world!");
 
-            Aula0303_Conceitos.Util.TipoMeioTransporte tipo = (Aula0303_Conceitos.Util.TipoMeioTransporte) Aula0303_Conceitos.Util.Menu();
+            MeioTransporte mt = new Barco();
+            ((Barco)mt).QuantidadePes = 10;
+
+            TipoMeioTransporte tipo = (TipoMeioTransporte) Menu();
 
             switch (tipo)
             {
-                case Util.TipoMeioTransporte.Carro:
+                case TipoMeioTransporte.Carro:
                     Carro c = new Carro("Fusca");
                     c.Ano = 1978;
                     c.Capacidade = 4;
@@ -24,16 +24,18 @@ namespace Aula0303_Conceitos
                     c.Frear();
                     c.Parar();
                     break;
-                case Util.TipoMeioTransporte.Bicicleta:
+                case TipoMeioTransporte.Bicicleta:
                     Bicicleta b = new Bicicleta();
                     b.Nome = "Caloi";
-                    b.Ano = 1955;
+                    b.Ano = 2016;
+                    b.Capacidade = 1;
                     b.QuantidadeMarcha = 21;
                     b.Parar();
                     break;
-                case Util.TipoMeioTransporte.Barco:
+                case TipoMeioTransporte.Barco:
                     Barco ba = new Barco();
                     ba.Ano = 1969;
+                    ba.Nome = "Titanic";
                     ba.QuantidadePes = 50;
                     ba.Capacidade = 2000;
                     ((IMotorizado)ba).Acelerar();
@@ -43,7 +45,6 @@ namespace Aula0303_Conceitos
                 default:
                     break;
             }
-
 
             Console.ReadKey();
         }

@@ -17,11 +17,11 @@ namespace Aula0303_Conceitos
 
         public static int Menu()
         {
-            Console.WriteLine("Para Criar um carro digite 1");
-            Console.WriteLine("Para Criar um bicicleta digite 2");
-            Console.WriteLine("Para Criar um barco digite 3");
-            
-            int op = Convert.ToInt32(Console.Read());
+            Console.WriteLine("Para criar um carro digite 1");
+            Console.WriteLine("Para criar uma bicicleta 2");
+            Console.WriteLine("Para criar um barco digite 3");
+
+            int op = Convert.ToInt32(Console.ReadLine());
             return op;
         }
     }

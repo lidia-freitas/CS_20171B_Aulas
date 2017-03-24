@@ -2,18 +2,16 @@
 
 namespace Aula0303_Conceitos
 {
-    class Carro : MeioTransporte, IMotorizado
+    public class Carro : MeioTransporte, IMotorizado
     {
-
         public Carro(string nome)
         {
-            this.Nome = Nome;
+            this.Nome = nome;
         }
 
         public void Acelerar()
         {
             Console.WriteLine("Carro: Acelerando...");
-
         }
 
         public void Frear()
@@ -21,10 +19,11 @@ namespace Aula0303_Conceitos
             Console.WriteLine("Carro: Freando...");
         }
 
-        public override void Parar()
+        public override int Parar()
         {
-            base.Parar();
-            Console.WriteLine("Carro: Parando...");
+            int a = base.Parar();
+            Console.WriteLine(string.Format("Carro: Parando... (a={0})",a));
+            return 0;
         }
     }
 }
